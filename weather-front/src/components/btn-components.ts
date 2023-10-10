@@ -15,8 +15,6 @@ class BtnComponents {
         if (this.btnType) button.type = this.btnType;
         if (this.className) button.className = this.className;
 
-        button.classList.add('bg-blue-500', 'text-white', 'p-2', 'rounded-lg');
-
         return button
     }
 
