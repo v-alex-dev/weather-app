@@ -27,5 +27,4 @@ class BtnComponents {
 
         return button;
     }
-
 }

@@ -1,4 +1,4 @@
-class ArticleComponent {
+class cardComponents {
     private header: HTMLElement | undefined;
     private body: HTMLElement | undefined;
     private footer: HTMLElement | undefined;
@@ -19,17 +19,17 @@ class ArticleComponent {
         return article;
     }
 
-     protected addHeader(): void {
+     private addHeader(): void {
         this.header = document.createElement('div');
         this.header.className = 'card-header';
     }
 
-    protected addBody(): void {
+    private addBody(): void {
         this.body = document.createElement('div');
         this.body.className = 'card-body';
     }
 
-     protected addFooter(): void {
+     private addFooter(): void {
         this.footer = document.createElement('div');
         this.footer.className = 'card-footer';
     }
