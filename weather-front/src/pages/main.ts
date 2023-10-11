@@ -1,8 +1,8 @@
 import {BtnComponents} from '../components/btn-components.ts';
 import {CardComponents} from "../components/card-components.ts";
 import {getWeather} from "../queries/get-weather.ts";
-
-
+import  {saveLastSearch} from "../functions/localStorages-utils.ts";
+import {TemperatureChart} from  '../components/chart.ts';
 export const mainSection = () => {
     const section = document.createElement('section');
     const newBtn = new BtnComponents('btn-submit', 'button', 'btn', 'submit');
@@ -26,6 +26,7 @@ export const mainSection = () => {
         const weather = getWeather(city);
 
         weather.then(data => {
+            console.log(data)
 
             const weatherList = data.list;
             // J'initialise une date de comparaison en local.
@@ -33,6 +34,8 @@ export const mainSection = () => {
             today.setHours(0, 0, 0, 0)
             const next5DaysWeather = [];
             next5DaysWeather.push(weatherList[0]);
+
+            const chart = new TemperatureChart(next5DaysWeather);
 
             for (let i = 0; i < weatherList.length; i++) {
                 //J'initialise la date a comparer.
@@ -63,6 +66,17 @@ export const mainSection = () => {
             div.id = 'weather-list';
             div.classList.add('grid', 'grid-cols-2', 'grid-rows-2')
 
+            const canvas = document.createElement('canvas');
+            section.appendChild(canvas);
+            canvas.style.width = '500px !important'
+            canvas.style.height='300px !important'
+
+            // Définissez le contexte du graphique
+            const ctx = canvas.getContext('2d');
+            if (ctx) {
+                chart.setContext(ctx);
+                chart.initChart();
+            }
 
             next5DaysWeather.forEach(dayData => {
                 const newArticle = new CardComponents();
@@ -97,6 +111,7 @@ export const mainSection = () => {
                 div.appendChild(article);
                 section.appendChild(div)
             })
+            saveLastSearch(data);
         })
     })
 
