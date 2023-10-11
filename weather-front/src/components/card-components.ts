@@ -1,4 +1,4 @@
-class cardComponents {
+export class CardComponents {
     private header: HTMLElement | undefined;
     private body: HTMLElement | undefined;
     private footer: HTMLElement | undefined;

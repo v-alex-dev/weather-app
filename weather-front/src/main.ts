@@ -1,5 +1,11 @@
-import {getWeather} from "./queries/get-weather.ts";
+import {mainSection} from "./pages/main.ts";
 
-const meteo = getWeather('paris');
+const body = document.body;
+const main = document.createElement('main');
+const section = mainSection();
 
-meteo.then(data => console.log(data))
+
+body.appendChild(main);
+main.appendChild(section);
+
+
