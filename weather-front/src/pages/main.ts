@@ -17,16 +17,17 @@ export const mainSection = () => {
     // Attributs inpût
     input.placeholder = 'City';
     input.id = 'city-input';
-    input.classList.add('bg-slate-400', 'rounded', 'shadow-lg', 'opacity-30', 'mx-4')
+    input.classList.add('bg-slate-400', 'rounded', 'shadow-lg', 'opacity-50', 'mx-4', 'text-slate-200')
 
     // Attributs button
-    btn.classList.add('border-2', 'p-2', 'rounded-full', 'hover:bg-cyan-500','hover:ease-in','duration-300')
+    btn.classList.add('border-2', 'p-2', 'rounded-full', 'hover:bg-cyan-500','hover:ease-in','duration-300',)
 
     // AppendChild
     section.appendChild(form);
     form.appendChild(input);
     form.appendChild(btn);
 
+    form.classList.add('my-8')
 
     btn.addEventListener('click', () => {
         let city = input.value
@@ -93,9 +94,24 @@ export const mainSection = () => {
               next5DaysWeather.forEach(dayData => {
                   const newArticle = new CardComponents();
                   newArticle.addDiv(2);
-                  const article = newArticle.initArticle();
+                  const article = newArticle.initArticle(); 
                   
-                  article.classList.add('shadow-lg', 'm-4', 'rounded-3xl', 'flex', 'flex-col', 'justify-center', 'p-4')
+                  article.classList.add(
+                    'shadow-lg',
+                    'm-4',
+                    'rounded-3xl',
+                    'flex',
+                    'flex-col',
+                    'justify-center', 
+                    'p-4', 
+                    'hover:-translate-y-6', 
+                    'ease-in', 
+                    'duration-300', 
+                    'bg-gradient-to-t',
+                    'from-sky-700',
+                    'via-white',
+                    'to-blue-200'
+                    )
   
                   const cardBody = article.firstChild;
                   const cardFooter = article.lastChild;

@@ -9,9 +9,13 @@ const main = document.createElement('main');
 const section = mainSection();
 const nav = navBar();
 
+body.classList.add('bg-gradient-to-r','from-sky-500','to-indigo-500')
+
 body.appendChild(nav)
 body.appendChild(main);
 main.appendChild(section);
+
+main.classList.add('bg-slate-50', 'w-3/4', 'mx-auto', 'rounded-lg')
 
 const lastSearchData = loadLastSearch();
 
@@ -75,7 +79,22 @@ if (lastSearchData) {
         newArticle.addDiv(2);
         const article = newArticle.initArticle();
 
-        article.classList.add('shadow-lg', 'm-4', 'rounded-3xl', 'flex', 'flex-col', 'justify-center', 'p-4')
+        article.classList.add(
+          'shadow-lg',
+          'm-4', 
+          'rounded-3xl', 
+          'flex', 
+          'flex-col', 
+          'justify-center', 
+          'p-4', 
+          'hover:-translate-y-6', 
+          'ease-in', 
+          'duration-300', 
+          'bg-gradient-to-t',
+          'from-sky-700',
+          'via-white',
+          'to-blue-200'
+          )
 
         const cardBody = article.firstChild;
         const cardFooter = article.lastChild;

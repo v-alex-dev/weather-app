@@ -9,6 +9,7 @@ export const navBar = () => {
   const newBtn = new BtnComponents('reset-localStorage', 'button');
   const btnReset = newBtn.initButton();
   title.textContent = 'weather-app';
+  title.classList.add('uppercase', 'pt-2')
   icon.src = '../../public/vite.svg';
 
   nav.appendChild(icon);
@@ -16,7 +17,7 @@ export const navBar = () => {
   nav.appendChild(btnReset);
   
   nav.classList.add('flex', 'justify-between', 'w-full', 'h-10')
-  btnReset.classList.add('border-2', 'p-2', 'rounded-full', 'hover:bg-cyan-500','hover:ease-in','duration-300','align-center')
+  btnReset.classList.add('border-2', 'px-2' , 'rounded-full', 'hover:bg-cyan-500','hover:ease-in','duration-300','content-center', 'mt-2')
   btnReset.textContent = 'reset local storage';
 
   btnReset.addEventListener('click', resetLastSearch);
