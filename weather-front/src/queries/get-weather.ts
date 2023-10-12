@@ -1,4 +1,4 @@
-import {keyApi} from "../../keyApi.ts";
+import {keyApi} from "../../keyApi";
 
 export async function getWeather (value:string): Promise<object> {
     const key = keyApi;

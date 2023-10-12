@@ -27,7 +27,7 @@ export class CardComponents {
     private addBody(): void {
         this.body = document.createElement('div');
         this.body.className = 'card-body';
-        this.body.classList.add('flex', 'flex-col', 'justify-center', 'text-center', 'm-2', 'border-b-2')
+        this.body.classList.add('flex', 'flex-col', 'justify-center', 'text-center', 'm-2', 'border-b-2', 'border-b-black')
     }
 
      private addFooter(): void {

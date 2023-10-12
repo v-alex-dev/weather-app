@@ -7,7 +7,11 @@ import { navBar } from "./components/nav-bar";
 const body = document.body;
 const main = document.createElement('main');
 const section = mainSection();
-const nav = navBar();
+const nav = navBar(); 
+const key = import.meta.env.VITE_SOME_KEY
+console.log(key);
+
+
 
 body.classList.add('bg-gradient-to-r','from-sky-500','to-indigo-500')
 
@@ -47,7 +51,6 @@ if (lastSearchData) {
         ) {
             // Si les deux conditions sont remplis. Je dois l'ajouter dans un tableau.
             next5DaysWeather.push(weatherList[i]);
-            console.log(next5DaysWeather)
             today = new Date(forecastDate);
         }
 
@@ -60,7 +63,7 @@ if (lastSearchData) {
     // ADD DIV LIST ARTICLE
     const div = document.createElement('div')
     div.id = 'weather-list';
-    div.classList.add('grid', 'grid-cols-3', 'grid-rows-2')
+    div.classList.add('grid', 'grid-cols-3', 'grid-rows-2', 'm-4')
 
     const canvasDiv = document.createElement('div');
     canvasDiv.classList.add('w-2/3');

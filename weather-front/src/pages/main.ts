@@ -6,6 +6,7 @@ import {TemperatureChart} from  '../components/chart';
 import { validCity } from '../functions/valid-city';
 
 
+
 export const mainSection = () => {
     const section = document.createElement('section');
     const newBtn = new BtnComponents('btn-submit', 'button', 'btn', 'submit');
@@ -64,7 +65,6 @@ export const mainSection = () => {
                   ) {
                       // Si les deux conditions sont remplis. Je dois l'ajouter dans un tableau.
                       next5DaysWeather.push(weatherList[i]);
-                      console.log(next5DaysWeather)
                       today =new Date(forecastDate);
                   }
   
@@ -77,7 +77,7 @@ export const mainSection = () => {
               // ADD DIV LIST ARTICLE
               const div = document.createElement('div')
               div.id = 'weather-list';
-              div.classList.add('grid', 'grid-cols-3', 'grid-rows-2');
+              div.classList.add('grid', 'grid-cols-3', 'grid-rows-2', 'm-4');
               const canvasDiv = document.createElement('div');
               canvasDiv.classList.add('w-2/3', 'h-1/3');
               const canvas = document.createElement('canvas');

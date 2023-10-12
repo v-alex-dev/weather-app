@@ -10,7 +10,7 @@ export const navBar = () => {
   const btnReset = newBtn.initButton();
   title.textContent = 'weather-app';
   title.classList.add('uppercase', 'pt-2')
-  icon.src = '../../public/vite.svg';
+  icon.src = '/vite.svg';
 
   nav.appendChild(icon);
   nav.appendChild(title)
@@ -21,7 +21,6 @@ export const navBar = () => {
   btnReset.textContent = 'reset local storage';
 
   btnReset.addEventListener('click', resetLastSearch);
-  ;
 
   return nav
 
