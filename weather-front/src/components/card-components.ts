@@ -27,11 +27,13 @@ export class CardComponents {
     private addBody(): void {
         this.body = document.createElement('div');
         this.body.className = 'card-body';
+        this.body.classList.add('flex', 'flex-col', 'justify-center', 'text-center', 'm-2', 'border-b-2')
     }
 
      private addFooter(): void {
         this.footer = document.createElement('div');
         this.footer.className = 'card-footer';
+        this.footer.classList.add('flex', 'flex-col', 'justify-center', 'text-center', 'm-2')
     }
 
     addDiv(nbr :2 | 3): void {

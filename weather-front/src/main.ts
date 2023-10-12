@@ -2,12 +2,14 @@ import {mainSection} from "./pages/main.ts";
 import {loadLastSearch} from "./functions/localStorages-utils.ts";
 import {CardComponents} from "./components/card-components.ts";
 import {TemperatureChart} from "./components/chart.ts";
+import { navBar } from "./components/nav-bar";
 
 const body = document.body;
 const main = document.createElement('main');
 const section = mainSection();
+const nav = navBar();
 
-
+body.appendChild(nav)
 body.appendChild(main);
 main.appendChild(section);
 
@@ -54,10 +56,13 @@ if (lastSearchData) {
     // ADD DIV LIST ARTICLE
     const div = document.createElement('div')
     div.id = 'weather-list';
-    div.classList.add('grid', 'grid-cols-2', 'grid-rows-2')
+    div.classList.add('grid', 'grid-cols-3', 'grid-rows-2')
 
+    const canvasDiv = document.createElement('div');
+    canvasDiv.classList.add('w-2/3');
     const canvas = document.createElement('canvas');
-    section.appendChild(canvas);
+    section.appendChild(canvasDiv);
+    canvasDiv.appendChild(canvas)
 
 
     const ctx = canvas.getContext('2d');
@@ -70,10 +75,13 @@ if (lastSearchData) {
         newArticle.addDiv(2);
         const article = newArticle.initArticle();
 
-        article.classList.add('shadow-lg', 'm-4', 'rounded-3xl')
+        article.classList.add('shadow-lg', 'm-4', 'rounded-3xl', 'flex', 'flex-col', 'justify-center', 'p-4')
 
         const cardBody = article.firstChild;
         const cardFooter = article.lastChild;
+
+        cardBody.classList.add('flex', 'flex-col', 'justify-center', 'text-center');
+        cardFooter.classList.add('flex', 'flex-col', 'justify-center', 'text-center');
 
         if (cardBody !== null) {
             const title = document.createElement('h2');
@@ -90,10 +98,13 @@ if (lastSearchData) {
         if (cardFooter !== null) {
             const para = document.createElement('p')
             const description = dayData.weather[0].description;
+            const img = document.createElement('img');
+            img.src = `https://openweathermap.org/img/wn/${dayData.weather[0].icon}.png`
 
             para.textContent = `Weather : ${description}`
 
             cardFooter.appendChild(para)
+            cardFooter.appendChild(img)
         }
         div.appendChild(article);
         section.appendChild(div)

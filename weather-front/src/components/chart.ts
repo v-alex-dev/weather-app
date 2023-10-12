@@ -32,7 +32,10 @@ export class TemperatureChart {
                     ],
                 },
                 options: {
+                  maintainAspectRatio: true,
+                  responsive:true,
                     scales: {
+
                         x: {
                             type: 'time',
                             time: {

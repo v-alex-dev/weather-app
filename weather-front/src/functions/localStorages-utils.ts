@@ -9,3 +9,8 @@ export const loadLastSearch = (): any | null => {
     const savedData = localStorage.getItem('lastSearch');
     return savedData ? JSON.parse(savedData) : null;
 };
+
+export const resetLastSearch = (): any => {
+  localStorage.clear();
+  location.reload();
+}

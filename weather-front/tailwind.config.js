@@ -3,6 +3,7 @@ export default {
   content: ["./index.html", "./**/*.ts"],
   theme: {
     extend: {
+      fontFamily:'Lilita One, sans-serif'
     },
   },
   plugins: [],
